@@ -55,4 +55,4 @@ she-can/
   - **Font Awesome 6:** Consistent icon representations
   - **Google Fonts:** Playfair Display, DM Sans, Lora families
 
-To run the project locally, simply clone or open this folder in a server environment (e.g., VS Code Live Server, Python HTTP server, or equivalent static hosting).
+Website - https://6a19558049a7155d8fe67bcb--melodic-croquembouche-56f216.netlify.app/
