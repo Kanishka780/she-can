@@ -1,0 +1,84 @@
+/* ==========================================================================
+   MOBILE-FIRST GLOBAL RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+
+/* Small Devices Typography Scaling */
+@media (max-width: 639px) {
+  html {
+    font-size: 15px; /* Slightly smaller base font for mobile */
+  }
+
+  h1 {
+    font-size: 2.25rem; /* ~36px */
+  }
+
+  h2 {
+    font-size: 1.75rem; /* ~28px */
+  }
+
+  h3 {
+    font-size: 1.25rem; /* ~20px */
+  }
+
+  .btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* ==========================================================================
+   TABLET RESPONSIVE TWEAKS (640px - 1023px)
+   ========================================================================== */
+@media (min-width: 640px) and (max-width: 1023px) {
+  html {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 2.75rem; /* ~44px */
+  }
+
+  h2 {
+    font-size: 2.125rem; /* ~34px */
+  }
+}
+
+/* ==========================================================================
+   DESKTOP RESPONSIVE TWEAKS (1024px and up)
+   ========================================================================== */
+@media (min-width: 1024px) {
+  /* Grid gap expansions */
+  .grid {
+    gap: var(--space-xl);
+  }
+  
+  /* Enable desktop spacing enhancements */
+  .container {
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+  }
+}
+
+/* ==========================================================================
+   WIDE DESKTOP RESPONSIVE TWEAKS (1280px and up)
+   ========================================================================== */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* ==========================================================================
+   TOUCH UTILITIES & HOVER DISABLE ON TOUCH DEVICES
+   ========================================================================== */
+@media (hover: none) {
+  /* Disable translations or transitions that might feel sticky on tap */
+  .card--lift:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+}

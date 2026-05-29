@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* ==========================================================================
+   CSS CUSTOM PROPERTIES (DESIGN SYSTEM TOKENS)
+   ========================================================================== */
+:root {
+  /* Brand Colors */
+  --color-primary:       #D4622A;   /* Warm terracotta/saffron — main brand */
+  --color-primary-dark:  #B54E20;   /* Darker shade for hover states */
+  --color-primary-light: #F0A07A;   /* Lighter saffron tint */
+  --color-secondary:     #2C6E5E;   /* Deep forest teal — trust, healthcare */
+  --color-accent:        #E8B84B;   /* Warm amber — energy, optimism */
+  --color-rose:          #C96B7A;   /* Warm rose — menstrual initiative */
+  --color-rose-dark:     #A55160;
+  
+  /* Neutrals */
+  --color-bg:            #FDF8F3;   /* Warm off-white — main background */
+  --color-bg-alt:        #F5EDE0;   /* Slightly warmer cream — alternate sections */
+  --color-dark:          #1E1A18;   /* Near-black with warm undertone — main text */
+  --color-mid:           #5C4F45;   /* Warm gray-brown — secondary body text */
+  --color-light:         #C8B8A8;   /* Light warm gray — borders, dividers */
+  --color-white:         #FFFFFF;
+  --color-overlay:       rgba(30, 26, 24, 0.4);
+  
+  /* Focus Area Card Accent Colors */
+  --color-education:     #D4622A;
+  --color-healthcare:    #2C6E5E;
+  --color-menstrual:     #C96B7A;
+  --color-skills:        #E8B84B;
+  --color-community:     #8B5E3C;
+  --color-volunteer:     #4A7C59;
+  --color-social:        #6B4C8A;
+
+  /* Typography Families */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-heading: 'DM Sans', system-ui, sans-serif;
+  --font-body: 'Lora', Georgia, serif;
+
+  /* Spacing Scale */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:   16px;
+  --space-lg:   24px;
+  --space-xl:   40px;
+  --space-2xl:  64px;
+  --space-3xl:  96px;
+  --space-4xl:  128px;
+
+  /* Border Radii */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* Shadows (Elevation) */
+  --shadow-sm:  0 1px 3px rgba(30, 26, 24, 0.06), 0 1px 2px rgba(30, 26, 24, 0.04);
+  --shadow-md:  0 4px 12px rgba(30, 26, 24, 0.08), 0 2px 6px rgba(30, 26, 24, 0.06);
+  --shadow-lg:  0 12px 32px rgba(30, 26, 24, 0.10), 0 4px 12px rgba(30, 26, 24, 0.08);
+  --shadow-xl:  0 24px 48px rgba(30, 26, 24, 0.12);
+  
+  /* Transition Timing */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* ==========================================================================
+   RESET & BASE STYLING
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-dark);
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-dark);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: 3.5rem; /* 56px */
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: 2.5rem; /* 40px */
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+h4 {
+  font-family: var(--font-heading);
+  font-size: 1.125rem; /* 18px */
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Typography Utility Classes */
+.text-serif { font-family: var(--font-body); }
+.text-sans { font-family: var(--font-heading); }
+.text-display { font-family: var(--font-display); }
+
+.text-uppercase { text-transform: uppercase; }
+.letter-spacing-wide { letter-spacing: 0.1em; }
+
+.label-small {
+  font-family: var(--font-heading);
+  font-size: 0.75rem; /* 12px */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+}
+
+/* ==========================================================================
+   ACCESSIBILITY UTILITIES
+   ========================================================================== */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-sm) var(--space-md);
+  z-index: 9999;
+  border-bottom-right-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: none;
+}
+
+/* Custom focus ring indicators */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

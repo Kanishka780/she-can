@@ -1,0 +1,121 @@
+/* ==========================================================================
+   TRANSITIONS & HOVER EFFECTS
+   ========================================================================== */
+.transition-all {
+  transition: all var(--transition-normal);
+}
+
+.transition-slow {
+  transition: all var(--transition-slow);
+}
+
+/* ==========================================================================
+   KEYFRAME ANIMATIONS
+   ========================================================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Draw path animation for SVG */
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Timeline specific micro-interactions */
+.timeline-path-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 2s ease;
+}
+
+/* Class to trigger line drawing */
+.timeline-path-draw--active {
+  stroke-dashoffset: 0;
+}
+
+/* Tab Panel Fade Transition */
+.tab-panel {
+  display: none;
+}
+
+.tab-panel--active {
+  display: block;
+  animation: fadeInUp var(--transition-normal) forwards;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY OVERRIDES (REDUCED MOTION)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable AOS transition and delays */
+  [data-aos] {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    transition-delay: 0s !important;
+  }
+
+  /* Disable timeline SVG path animations */
+  .timeline-path-draw {
+    stroke-dashoffset: 0 !important;
+    transition: none !important;
+  }
+
+  /* Disable custom slide and fade keyframes */
+  .tab-panel--active {
+    animation: none !important;
+  }
+
+  .modal {
+    transition: none !important;
+    transform: translate(-50%, -50%) !important;
+  }
+
+  body {
+    scroll-behavior: auto !important;
+  }
+  
+  /* Disable general transition behaviors */
+  * {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+  }
+}

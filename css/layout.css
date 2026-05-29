@@ -1,0 +1,121 @@
+/* ==========================================================================
+   LAYOUT HELPER CLASSES
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+.section-padding {
+  padding-top: var(--space-2xl); /* 64px (Mobile First) */
+  padding-bottom: var(--space-2xl);
+}
+
+/* Flexbox layouts */
+.d-flex { display: flex; }
+.flex-column { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.align-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+
+/* Grid Layouts */
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.grid--2-col {
+  grid-template-columns: 1fr;
+}
+
+.grid--3-col {
+  grid-template-columns: 1fr;
+}
+
+.grid--4-col {
+  grid-template-columns: 1fr;
+}
+
+/* Two-column layout with 60/40 or 50/50 proportion */
+.split-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* Spacer utilities */
+.margin-top-sm { margin-top: var(--space-sm); }
+.margin-top-md { margin-top: var(--space-md); }
+.margin-top-lg { margin-top: var(--space-lg); }
+.margin-top-xl { margin-top: var(--space-xl); }
+
+.margin-bottom-sm { margin-bottom: var(--space-sm); }
+.margin-bottom-md { margin-bottom: var(--space-md); }
+.margin-bottom-lg { margin-bottom: var(--space-lg); }
+.margin-bottom-xl { margin-bottom: var(--space-xl); }
+
+/* Alignment Utility */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.section-header {
+  max-width: 700px;
+  margin: 0 auto var(--space-xl) auto;
+  text-align: center;
+}
+
+.section-header__underline {
+  width: 80px;
+  height: 4px;
+  background-color: var(--color-primary);
+  margin: var(--space-sm) auto 0 auto;
+  border-radius: var(--radius-full);
+}
+
+/* ==========================================================================
+   TABLET & DESKTOP ENHANCEMENTS
+   ========================================================================== */
+@media (min-width: 640px) {
+  .grid--2-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid--3-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: var(--space-3xl); /* 96px */
+    padding-bottom: var(--space-3xl);
+  }
+
+  .grid--3-col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid--4-col {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .split-layout {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-2xl);
+  }
+
+  .split-layout > * {
+    flex: 1;
+  }
+
+  .split-layout--60-40 > :first-child {
+    flex: 1.5;
+  }
+}
